@@ -11,20 +11,18 @@ The system maps the RoboRacer circuit through teleoperation.
 - AutoDRIVE Simulator (Windows)
 - VirtualBox
 - slam_toolbox
-- nav2_map_server
 
 ## Installation
 
 ```bash
 sudo apt install ros-humble-slam-toolbox
-sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup
+sudo apt install ros-humble-nav2-map-server
 ```
 
 ## Project Structure
 
 - `odom_publisher.py` — Custom node that publishes odometry using IPS + IMU sensors
 - `lidar_republisher.py` — Custom node that fixes LiDAR timestamp synchronization between Windows and Linux
-- `nav2_params.yaml` — Nav2 navigation configuration file
 
 ## How to Run
 
@@ -80,6 +78,9 @@ ros2 run slam_toolbox async_slam_toolbox_node --ros-args \
 ### Save the map
 ```bash
 ros2 run nav2_map_server map_saver_cli -f ~/mapa_autodrive
+```
+
+## TF Frame Tree
 map
 └── odom
 └── f1tenth_1
@@ -93,6 +94,7 @@ map
 ├── ips
 ├── left_encoder
 └── right_encoder
+
 ## Key Challenges Solved
 
 1. **Timestamp synchronization** — The AutoDRIVE simulator runs on Windows while 
@@ -112,6 +114,5 @@ teleoperation and saved as mapa_autodrive.pgm and mapa_autodrive.yaml.
 ## Authors
 
 - Juan Santana
-```
 
 ## TF Frame Tree
