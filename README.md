@@ -1,4 +1,4 @@
-```markdown
+
 # 🏎️ ROS 2 AutoDRIVE F1Tenth - Mapeo Simultáneo (SLAM) y Teleoperación
 
 Este repositorio documenta la implementación completa para lograr el mapeo simultáneo (SLAM) de un circuito utilizando el vehículo F1Tenth en el simulador **AutoDRIVE** y **ROS 2 Humble**. 
